@@ -1,5 +1,8 @@
 "use client";
-import { useState, useEffect, useContext } from "react";
+
+import { useEffect } from "react";
+
+import useToast from "@/hooks/useToast";
 
 // App component
 const App = () => {
@@ -8,7 +11,7 @@ const App = () => {
   // state
 
   // context hooks
-
+  const { showToast } = useToast();
   // queries
 
   // mutations
@@ -18,7 +21,11 @@ const App = () => {
   // effect
 
   // other variables/functions/handlers
-
+  useEffect(() => {
+    showToast({
+      text: "lorem",
+    });
+  }, []);
   // render
   return <></>;
 };

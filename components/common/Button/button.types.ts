@@ -3,7 +3,11 @@ import { ColorVariant } from "@/types/ColorVariant";
 import { SizeVariant } from "@/types/SizeVariant";
 
 export interface IButton {
-  id: string;
+  id?: string;
+  onClick: () => void;
+  text?: string;
+  icon?: string;
+  onlyIcon?: boolean;
   colorVariant?: ColorVariant;
   alignVariant?: AlignVariant;
   sizeVariant?: SizeVariant;

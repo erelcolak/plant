@@ -11,7 +11,16 @@ import styles from "./button.module.scss";
 // Button component
 const Button = (props: IButton) => {
   // destructuring props
-  const { id, alignVariant = AlignVariant.center, colorVariant = ColorVariant.primary, sizeVariant = SizeVariant.default } = props;
+  const {
+    id,
+    icon,
+    text,
+    onlyIcon,
+    alignVariant = AlignVariant.center,
+    colorVariant = ColorVariant.primary,
+    sizeVariant = SizeVariant.default,
+    onClick,
+  } = props;
   // state
 
   // context hooks
@@ -27,7 +36,17 @@ const Button = (props: IButton) => {
   // other variables/functions/handlers
 
   // render
-  return <button id={id} className={classNames(styles.button, styles[alignVariant], styles[colorVariant], styles[sizeVariant])}></button>;
+  return (
+    <button
+      id={id}
+      className={classNames(styles.button, styles[alignVariant], styles[colorVariant], styles[sizeVariant], onlyIcon && styles.onlyIcon)}
+      type="button"
+      onClick={onClick}
+    >
+      {icon && <i className={classNames(styles.icon, `bi-${icon}`)}></i>}
+      {text && !onlyIcon && <span className={styles.text}>{text}</span>}
+    </button>
+  );
 };
 
 // export

@@ -1,0 +1,48 @@
+@import "/styles/variables.scss";
+
+.loader {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1002;
+}
+
+.rounded {
+  border-radius: 0.75rem;
+  .overlay {
+    border-radius: 0.75rem;
+  }
+}
+.overlay {
+  background-color: var(--color-white);
+  opacity: 0.8;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1002;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--color-green-400);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 1003;
+  animation: rotation 0.8s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

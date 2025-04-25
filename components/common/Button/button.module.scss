@@ -1,2 +1,18 @@
 .button {
+  font-family: var(--font-urbanist);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 0;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+}
+.text {
+  width: max-content;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
