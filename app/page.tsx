@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-
 import Col from "@/components/common/Col";
 import Container from "@/components/common/Container";
 import ContainerFullwidth from "@/components/common/ContainerFullwidth";
@@ -21,7 +19,7 @@ const App = () => {
   // state
 
   // context hooks
-  const { modals, showModal } = useModal();
+  const { modals } = useModal();
   // queries
 
   // mutations
@@ -29,11 +27,7 @@ const App = () => {
   // formik
 
   // effect
-  useEffect(() => {
-    showModal(ModalTypes.ModalRemovePlant, {
-      data: {},
-    });
-  }, []);
+
   // other variables/functions/handlers
 
   // render

@@ -25,7 +25,6 @@ const useModal = () => {
         data: {},
       },
     });
-    debugger;
   };
   return {
     modals,

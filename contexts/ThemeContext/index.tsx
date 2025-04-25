@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
 import { CookieTheme } from "@/utils/constants";
+
 import { IThemeContext, Theme } from "./themeContext.types";
 
 const ThemeContext = createContext<IThemeContext>({

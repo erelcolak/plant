@@ -75,7 +75,11 @@
   @include buttonColor($color-red-500, $color-white);
 }
 .light {
-  @include buttonColor($color-gray-200, $color-gray-700);
+  color: var(--color-gray-700);
+  background-color: var(--color-gray-100);
+  &:hover {
+    background-color: var(--color-gray-200);
+  }
 }
 .dark {
   @include buttonColor($color-black, $color-white);

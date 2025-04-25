@@ -1,6 +1,6 @@
 @import "/styles/variables.scss";
 
-:root {
+:root[data-theme="light"] {
   --color-white: #{$color-white};
   --color-black: #{$color-black};
   --color-gray-50: #{$color-gray-50};
