@@ -5,8 +5,6 @@ import Modal from "@/components/common/Modal";
 import { ModalTypes } from "@/contexts/ModalContext/modalContext.types";
 import useModal from "@/hooks/useModal";
 
-import { ColorVariant } from "@/types/ColorVariant";
-
 // ModalRemovePlant component
 const ModalRemovePlant = () => {
   // destructuring props
@@ -35,7 +33,6 @@ const ModalRemovePlant = () => {
       loading={false}
       footerRightButton={{
         text: "Sil",
-        colorVariant: ColorVariant.danger,
         onClick: () => {
           // mutation
         },

@@ -7,6 +7,8 @@ import Loader from "../Loader";
 
 import useModal from "@/hooks/useModal";
 
+import { ColorVariant } from "@/types/ColorVariant";
+
 import { IModal } from "./modal.types";
 import styles from "./modal.module.scss";
 
@@ -36,13 +38,19 @@ const Modal = (props: IModal) => {
       <div id={id} className={styles.modal} onClick={(e) => e.stopPropagation()}>
         {loading && <Loader rounded />}
         <div className={styles.header}>
-          <Button id="Modal-Header-Close-Button" onClick={handleHideModal} icon="x-lg" onlyIcon />
+          <Button id="Modal-Header-Close-Button" onClick={handleHideModal} icon="x-lg" onlyIcon colorVariant={ColorVariant.light} />
         </div>
         <div className={styles.body}>{children}</div>
         <div
           className={classNames(styles.footer, isFooterLeftButtonAvailable && isFooterRightButtonAvailable ? styles.multipleControls : styles.singleControl)}
         >
-          <Button id={`${id}-FooterLeftButton`} onClick={handleHideModal} text="İptal" {...(footerLeftButton ? footerLeftButton : null)} />
+          <Button
+            id={`${id}-FooterLeftButton`}
+            onClick={handleHideModal}
+            colorVariant={ColorVariant.light}
+            text="İptal"
+            {...(footerLeftButton ? footerLeftButton : null)}
+          />
           <Button id={`${id}-FooterRightButton`} onClick={() => null} text="Tamam" {...(footerRightButton ? footerRightButton : null)} />
         </div>
       </div>

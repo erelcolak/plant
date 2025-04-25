@@ -1,10 +1,6 @@
 @import "/styles/variables.scss";
 
 // FONT SIZE
-@mixin font-size-xlarge {
-  font-size: 1.5rem;
-  line-height: 1.75rem;
-}
 @mixin font-size-large {
   font-size: 1.25rem;
   line-height: 1.5rem;
@@ -12,10 +8,6 @@
 @mixin font-size-default {
   font-size: 1rem;
   line-height: 1.25rem;
-}
-@mixin font-size-medium {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
 }
 @mixin font-size-small {
   font-size: 0.75rem;
@@ -44,5 +36,15 @@
     &:hover {
       background-color: var(--color-gray-400);
     }
+  }
+}
+
+// BUTTON
+@mixin buttonColor($background-color, $color) {
+  color: $color;
+  background-color: $background-color;
+
+  &:hover {
+    background-color: darken($background-color, 4%);
   }
 }

@@ -1,9 +1,15 @@
 "use client";
 
+import { useEffect } from "react";
+
 import Col from "@/components/common/Col";
 import Container from "@/components/common/Container";
 import ContainerFullwidth from "@/components/common/ContainerFullwidth";
 import PlantCard from "@/components/common/PlantCard";
+import ModalRemovePlant from "@/components/modals/ModalRemovePlant";
+
+import { ModalTypes } from "@/contexts/ModalContext/modalContext.types";
+import useModal from "@/hooks/useModal";
 
 import { ColorVariant } from "@/types/ColorVariant";
 import { PlantType } from "@/types/PlantType";
@@ -15,7 +21,7 @@ const App = () => {
   // state
 
   // context hooks
-
+  const { modals, showModal } = useModal();
   // queries
 
   // mutations
@@ -23,7 +29,11 @@ const App = () => {
   // formik
 
   // effect
-
+  useEffect(() => {
+    showModal(ModalTypes.ModalRemovePlant, {
+      data: {},
+    });
+  }, []);
   // other variables/functions/handlers
 
   // render
@@ -43,6 +53,7 @@ const App = () => {
           <PlantCard plantType={PlantType.SUCCULENT} colorVariant={ColorVariant.warning} />
         </Col>
       </Container>
+      {modals[ModalTypes.ModalRemovePlant] && <ModalRemovePlant />}
     </ContainerFullwidth>
   );
 };

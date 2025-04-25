@@ -30,7 +30,7 @@ const PlantCard = (props: IPlantCard) => {
   // render
   return (
     <div className={classNames(styles.plantCard, styles[colorVariant])}>
-      <Image width={130} height={143} alt="" src={`/images/plants/${plantType}.png`} objectFit="cover" className={styles.image} />
+      <Image width={130} height={143} alt="" src={`/images/plants/${plantType}.png`} className={styles.image} />
       <div className={styles.title}>{PlantTypeLabels[plantType]}</div>
     </div>
   );

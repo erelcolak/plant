@@ -17,7 +17,7 @@ const Button = (props: IButton) => {
     text,
     onlyIcon,
     alignVariant = AlignVariant.center,
-    colorVariant = ColorVariant.primary,
+    colorVariant = ColorVariant.success,
     sizeVariant = SizeVariant.default,
     onClick,
   } = props;
