@@ -1,0 +1,23 @@
+@import "/styles/variables.scss";
+@import "/styles/mixins.scss";
+
+html {
+  font-size: 16px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: var(--font-urbanist);
+  font-optical-sizing: auto;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-black);
+  font-weight: $font-weight-400;
+  line-height: 1.25rem;
+  background-color: var(--color-white);
+  @include scrollbar;
+}
