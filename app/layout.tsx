@@ -6,6 +6,7 @@ import { ThemeContextProvider } from "@/contexts/ThemeContext";
 
 import "@/styles/main.scss";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import MainLayout from "@/components/layout/_MainLayout";
 
 const urbanist = Urbanist({ subsets: ["latin", "latin-ext"], variable: "--font-urbanist" });
 
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body id="body" className={urbanist.className}>
-        <ThemeContextProvider>{children}</ThemeContextProvider>
+        <ThemeContextProvider>
+          <MainLayout>{children}</MainLayout>
+        </ThemeContextProvider>
       </body>
     </html>
   );

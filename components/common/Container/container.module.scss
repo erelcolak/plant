@@ -1,0 +1,10 @@
+@import "/styles/variables.scss";
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: $breakpoint-lg;
+  width: 100%;
+  gap: 2rem;
+}
