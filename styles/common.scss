@@ -21,3 +21,7 @@ body {
   background-color: var(--color-white);
   @include scrollbar;
 }
+// modal
+body.modal-open {
+  overflow: hidden;
+}

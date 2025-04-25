@@ -12,6 +12,8 @@
   color: var(--color-gray-700);
 }
 .subtitle {
+  display: flex;
+  gap: 0.25rem;
   @include font-size-small;
 }
 .info {

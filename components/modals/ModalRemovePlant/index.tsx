@@ -1,6 +1,7 @@
 "use client";
 
 import Modal from "@/components/common/Modal";
+import Input from "@/components/form/Input";
 
 import { ModalTypes } from "@/contexts/ModalContext/modalContext.types";
 import useModal from "@/hooks/useModal";
@@ -38,7 +39,7 @@ const ModalRemovePlant = () => {
         },
       }}
     >
-      <></>
+      <Input id="lorem" value="saşldfkjaislşdfkaildkf" onChange={(e) => {}} label="Bitki Adı" info="Bitki adını giriniz" />
     </Modal>
   );
 };
