@@ -1,13 +1,12 @@
 "use client";
-import { useState, useEffect, useContext } from "react";
-
-import { IButton } from "./button.types";
-
-import styles from "./button.module.scss";
 import classNames from "classnames";
+
 import { AlignVariant } from "@/types/AlignVariant";
 import { ColorVariant } from "@/types/ColorVariant";
 import { SizeVariant } from "@/types/SizeVariant";
+
+import { IButton } from "./button.types";
+import styles from "./button.module.scss";
 
 // Button component
 const Button = (props: IButton) => {

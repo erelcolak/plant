@@ -9,7 +9,4 @@ export enum ColorVariant {
   pink = "pink",
   orange = "orange",
   blue = "blue",
-  white = "white",
-  disabled = "disabled",
-  transparent = "transparent",
 }

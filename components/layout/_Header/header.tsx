@@ -1,6 +1,7 @@
 "use client";
 
 import ContainerFullwidth from "@/components/common/ContainerFullwidth";
+
 import styles from "./header.module.scss";
 
 // Header component

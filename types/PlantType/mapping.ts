@@ -27,4 +27,8 @@ export const PlantTypeMapping: IOption[] = [
     label: PlantTypeLabels.ROSE,
     value: PlantType.ROSE,
   },
+  {
+    label: PlantTypeLabels.BONSAI,
+    value: PlantType.BONSAI,
+  },
 ];

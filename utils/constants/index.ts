@@ -4,3 +4,4 @@ export const siteHeaderMetaData = {
   robots: "noindex",
 };
 export const CookieTheme = "Theme";
+export const emptyFieldString = "-";

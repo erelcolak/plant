@@ -11,4 +11,5 @@ export const PlantTypeLabels: TPlantTypeLabels = {
   GERBERA: "Gerbera",
   ROSE: "Gül",
   ORCHIDACEAE: "Orkide",
+  BONSAI: "Bonsai",
 };

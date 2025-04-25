@@ -1,11 +1,10 @@
 "use client";
 
-import { IMainLayout } from "./mainLayout.types";
-
-import Header from "../_Header";
-import Footer from "../_Footer";
 import Body from "../_Body";
+import Footer from "../_Footer";
+import Header from "../_Header";
 
+import { IMainLayout } from "./mainLayout.types";
 import styles from "./mainLayout.module.scss";
 
 // MainLayout component
