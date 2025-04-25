@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 
 import { siteHeaderMetaData } from "@/utils/constants";
+import { ThemeContextProvider } from "@/contexts/ThemeContext";
+
 import "@/styles/main.scss";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { ThemeContextProvider } from "@/contexts/ThemeContext";
 
 const urbanist = Urbanist({ subsets: ["latin", "latin-ext"], variable: "--font-urbanist" });
 
