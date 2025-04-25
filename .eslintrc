@@ -1,0 +1,48 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["simple-import-sort", "unused-imports"],
+  "rules": {
+    "no-console": "error",
+    "no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.jsx", "**/*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // main scripts
+              ["^react$", "^next", "^[a-z]", "^@tanstack"],
+              // node modules | packages starting with `~`
+              ["^~"],
+              // root
+              ["^@"],
+              // components and subcomponents
+              ["^@/components", "^\\../"],
+              // context, hooks
+              ["^@/contexts", "^@/hooks"],
+              // utils
+              ["^@/utils"],
+              // types
+              ["^@/types"],
+              // schema
+              ["^@/schema"],
+              // api
+              ["^@/swagger/"],
+              // component and subcomponents
+              ["^\\./", "^./components", "^.+\\.s?css$", "^.+\\.s?scss$"],
+              // other imports
+              ["^\\u0000"]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
