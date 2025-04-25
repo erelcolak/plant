@@ -1,0 +1,89 @@
+@import "/styles/variables.scss";
+@import "/styles/mixins.scss";
+
+.plantCard {
+  position: relative;
+  border-radius: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    .image {
+      // filter: blur(12px);
+    }
+    background-color: var(--color-gray-50);
+  }
+  transition: all linear $default-animation-duration;
+}
+.image {
+  position: relative;
+  right: -25%;
+  width: 100%;
+  height: auto;
+}
+.title {
+  @include font-size-xlarge;
+  font-weight: $font-weight-900;
+}
+
+// colorVariant
+.primary {
+  background-color: var(--color-indigo-50);
+  .title {
+    color: var(--color-indigo-700);
+  }
+}
+.secondary {
+  background-color: var(--color-teal-50);
+  .title {
+    color: var(--color-teal-700);
+  }
+}
+.success {
+  background-color: var(--color-green-50);
+  .title {
+    color: var(--color-green-700);
+  }
+}
+.warning {
+  background-color: var(--color-yellow-50);
+  .title {
+    color: var(--color-yellow-700);
+  }
+}
+.danger {
+  background-color: var(--color-red-50);
+  .title {
+    color: var(--color-red-700);
+  }
+}
+.light {
+  background-color: var(--color-gray-50);
+  .title {
+    color: var(--color-gray-700);
+  }
+}
+.dark {
+  background-color: var(--color-gray-300);
+  .title {
+    color: var(--color-gray-700);
+  }
+}
+.pink {
+  background-color: var(--color-pink-50);
+  .title {
+    color: var(--color-pink-700);
+  }
+}
+.orange {
+  background-color: var(--color-orange-50);
+  .title {
+    color: var(--color-orange-700);
+  }
+}
+.blue {
+  background-color: var(--color-blue-50);
+  .title {
+    color: var(--color-blue-700);
+  }
+}

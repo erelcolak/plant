@@ -1,5 +1,7 @@
 "use client";
 
+import ContainerFullwidth from "@/components/common/ContainerFullwidth";
+
 import { IBody } from "./body.types";
 import styles from "./body.module.scss";
 
@@ -18,7 +20,7 @@ const Body = (props: IBody) => {
   // other variables/functions/handlers
 
   // render
-  return <div className={styles.body}>{children}</div>;
+  return <ContainerFullwidth className={styles.footer}>{children}</ContainerFullwidth>;
 };
 
 // export
