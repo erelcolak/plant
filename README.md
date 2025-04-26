@@ -1,5 +1,9 @@
 ![plantcare](https://github.com/user-attachments/assets/022eccf9-591d-43b9-ad4f-ac52c239e2d5)
 
+## Preview Deployed URL
+
+URL: [https://plant-sage-eta.vercel.app/](https://plant-sage-eta.vercel.app/) to see in preview domain deployed via Vercel
+
 ![dark-light](https://github.com/user-attachments/assets/1eb16593-f5ae-4fe2-a2b4-daa35e7d7ab9)
 
 ![translate](https://github.com/user-attachments/assets/1afdc455-4b34-4bee-8459-3b306dec0b61)
@@ -11,10 +15,6 @@
 ![watering](https://github.com/user-attachments/assets/e121ba63-3964-406b-9167-50893523d7ef)
 
 ![delete](https://github.com/user-attachments/assets/099cf729-a3b1-433a-9edb-05362f98be91)
-
-## Preview Deployed URL
-
-URL: [https://plant-sage-eta.vercel.app/](https://plant-sage-eta.vercel.app/) to see in preview domain deployed via Vercel
 
 ## Getting Started
 
