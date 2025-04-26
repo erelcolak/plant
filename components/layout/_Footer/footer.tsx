@@ -30,6 +30,10 @@ const Footer = () => {
       <Container>
         <div className={styles.footerMenu}>
           <Logo />
+          <div className={styles.copyrightText}>
+            <div className={styles.poweredBy}>Design & Developed By</div>
+            <div className={styles.name}>Erel Çolak</div>
+          </div>
         </div>
       </Container>
     </ContainerFullwidth>

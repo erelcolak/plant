@@ -1,9 +1,27 @@
+@import "/styles/variables.scss";
+@import "/styles/mixins.scss";
+
 .footer {
   border-top: 3px solid var(--color-green-500);
 }
 .footerMenu {
   display: flex;
-  height: 80px;
+  flex-direction: column;
+  min-height: 80px;
+  padding: 1rem;
   justify-content: center;
   align-items: center;
+}
+.copyrightText {
+  color: var(--color-indigo-500);
+  font-weight: $font-weight-700;
+  text-align: center;
+}
+.poweredBy {
+  @include font-size-small;
+  font-weight: $font-weight-300;
+  color: var(--color-gray-400);
+}
+.name {
+  @include font-size-default;
 }
