@@ -42,7 +42,10 @@ const Button = (props: IButton) => {
       id={id}
       className={classNames(styles.button, styles[alignVariant], styles[colorVariant], styles[sizeVariant], onlyIcon && styles.onlyIcon)}
       type="button"
-      onClick={onClick}
+      onClick={(e: any) => {
+        e.stopPropagation();
+        onClick();
+      }}
       ref={htmlRef}
     >
       {icon && <i className={classNames(styles.icon, `bi-${icon}`)}></i>}

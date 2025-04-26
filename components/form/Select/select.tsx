@@ -39,6 +39,7 @@ const Select = (props: ISelect) => {
         value={value}
         ref={selectRef}
       >
+        <option value="">Seçiniz</option>
         {options.map((option) => {
           return (
             <option key={option.value} value={option.value}>

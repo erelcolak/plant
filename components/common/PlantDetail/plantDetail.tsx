@@ -5,6 +5,7 @@ import Image from "next/image";
 import Col from "../Col";
 import Container from "../Container";
 import ContainerFullwidth from "../ContainerFullwidth";
+import Loader from "../Loader";
 
 import { PlantTypeLabels } from "@/types/PlantType";
 
@@ -15,7 +16,7 @@ import styles from "./plantDetail.module.scss";
 // PlantDetail component
 const PlantDetail = (props: IPlantDetail) => {
   // destructuring props
-  const { plant } = props;
+  const { plant, isFetching } = props;
   // state
 
   // context hooks
@@ -34,15 +35,18 @@ const PlantDetail = (props: IPlantDetail) => {
   return (
     <ContainerFullwidth>
       <Container>
-        <Col columnSize="2">
-          <Col>
-            <Heading title={PlantTypeLabels[plant.plantType]} subtitle={plant.name} />
-            <Controls plantId={plant.id} />
+        {isFetching && <Loader />}
+        {plant && (
+          <Col columnSize="2">
+            <Col>
+              <Heading title={PlantTypeLabels[plant.plantType]} subtitle={plant.name} />
+              <Controls plantId={plant.id} />
+            </Col>
+            <Col>
+              <Image width={650} height={715} alt="" src={`/images/plants/${plant.plantType}.png`} className={styles.image} />
+            </Col>
           </Col>
-          <Col>
-            <Image width={650} height={715} alt="" src={`/images/plants/${plant.plantType}.png`} className={styles.image} />
-          </Col>
-        </Col>
+        )}
       </Container>
     </ContainerFullwidth>
   );

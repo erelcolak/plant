@@ -49,8 +49,8 @@ const ServiceContextProvider = (props: any) => {
         dehydrateOptions: {
           // eslint-disable-next-line unused-imports/no-unused-vars
           shouldDehydrateQuery(query) {
-            // control globalData keys for cache and dehydrate
-            if (query.queryKey.includes("getAllPlants")) {
+            // control global keys for cache and dehydrate
+            if (query.queryKey.includes("getAllRooms")) {
               return true;
             }
             return false;

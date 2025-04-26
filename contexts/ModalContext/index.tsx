@@ -1,11 +1,13 @@
 "use client";
 
 import { createContext, useState } from "react";
+import dynamic from "next/dynamic";
 
-import ModalRemovePlant from "@/components/modals/ModalRemovePlant";
+import ModalAddPlant from "@/components/modals/ModalAddPlant";
 
 import { IModalContext, initialValuesModalContext, initialValuesModalData, TModalData, TModals } from "./modalContext.types";
 
+const ModalRemovePlant = dynamic(() => import("@/components/modals/ModalRemovePlant"), { ssr: false });
 const ModalContext = createContext<IModalContext>(initialValuesModalContext);
 
 // ModalContextProvider component
@@ -39,6 +41,7 @@ const ModalContextProvider = (props: any) => {
     >
       {props.children}
       {modals["ModalRemovePlant"] && <ModalRemovePlant />}
+      {modals["ModalAddPlant"] && <ModalAddPlant />}
     </ModalContext.Provider>
   );
 };

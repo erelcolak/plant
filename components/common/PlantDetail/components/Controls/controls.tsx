@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useQueryClient } from "@tanstack/react-query";
 
 import Button from "@/components/common/Button/button";
 
@@ -11,6 +10,7 @@ import useModal from "@/hooks/useModal";
 import { routes } from "@/utils/routes";
 
 import { ColorVariant } from "@/types/ColorVariant";
+import { ProcessType } from "@/types/ProcessType";
 
 import { IControls } from "./controls.types";
 import styles from "./controls.module.scss";
@@ -23,7 +23,6 @@ const Controls = (props: IControls) => {
 
   // context hooks
   const router = useRouter();
-  const queryClient = useQueryClient();
   const { showModal } = useModal();
   // queries
 
@@ -48,9 +47,22 @@ const Controls = (props: IControls) => {
               plantId,
             },
             callback() {
-              queryClient.invalidateQueries({
-                queryKey: ["getAllPlants"],
-              });
+              router.push(routes.home.url);
+            },
+          });
+        }}
+      />
+      <Button
+        icon="pencil"
+        text="Düzenle"
+        colorVariant={ColorVariant.secondary}
+        onClick={() => {
+          showModal(ModalTypes.ModalAddPlant, {
+            data: {
+              id: plantId,
+            },
+            processType: ProcessType.UPDATE,
+            callback() {
               router.push(routes.home.url);
             },
           });

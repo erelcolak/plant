@@ -15,7 +15,7 @@ const Detail = ({ params }: any) => {
   // context hooks
 
   // queries
-  const { data } = useQuery({
+  const { data, isFetching } = useQuery({
     queryKey: ["getPlantById", params.id],
     queryFn: () =>
       Plants.getPlantById({
@@ -29,9 +29,9 @@ const Detail = ({ params }: any) => {
   // effect
 
   // other variables/functions/handlers
-  if (!data) return null;
+
   // render
-  return <PlantDetail plant={data} />;
+  return <PlantDetail plant={data} isFetching={isFetching} />;
 };
 
 // export

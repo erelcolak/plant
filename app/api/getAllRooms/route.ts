@@ -1,9 +1,10 @@
 import { faker } from "@faker-js/faker";
 import { NextResponse } from "next/server";
 
-import { createPlant } from "@/utils/faker";
+import { createRoom } from "@/utils/faker";
+
+const list = faker.helpers.multiple(createRoom, { count: 2 });
 
 export async function GET() {
-  const list = faker.helpers.multiple(createPlant, { count: 11 });
   return NextResponse.json(list);
 }

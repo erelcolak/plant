@@ -4,7 +4,7 @@ import { PlantType } from "../PlantType";
 export interface Plant {
   id: string;
   name: string;
-  roomIds: string[];
+  roomId: string;
   plantType: PlantType;
   weeklyWaterNeeded: number;
   expectedRelativeHumidity: number;

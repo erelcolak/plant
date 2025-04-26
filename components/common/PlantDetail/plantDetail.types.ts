@@ -1,5 +1,6 @@
 import { Plant } from "@/types/Plant";
 
 export interface IPlantDetail {
-  plant: Plant;
+  plant?: Plant;
+  isFetching: boolean;
 }

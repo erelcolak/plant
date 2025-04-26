@@ -5,6 +5,8 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  border-bottom: 2px solid var(--color-gray-400);
+  margin-bottom: 1rem;
 }
 .title {
   margin: 0;

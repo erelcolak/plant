@@ -3,6 +3,7 @@ import { Urbanist } from "next/font/google";
 
 import MainLayout from "@/components/layout/_MainLayout";
 
+import { GlobalDataContextProvider } from "@/contexts/GlobalDataContext";
 import { ModalContextProvider } from "@/contexts/ModalContext";
 import { ServiceContextProvider } from "@/contexts/ServiceContext";
 import { ThemeContextProvider } from "@/contexts/ThemeContext";
@@ -28,9 +29,11 @@ export default function RootLayout({
         <ThemeContextProvider>
           <ToastContextProvider>
             <ServiceContextProvider>
-              <ModalContextProvider>
-                <MainLayout>{children}</MainLayout>
-              </ModalContextProvider>
+              <GlobalDataContextProvider>
+                <ModalContextProvider>
+                  <MainLayout>{children}</MainLayout>
+                </ModalContextProvider>
+              </GlobalDataContextProvider>
             </ServiceContextProvider>
           </ToastContextProvider>
         </ThemeContextProvider>

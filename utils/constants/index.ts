@@ -7,3 +7,4 @@ export const siteHeaderMetaData = {
 export const CookieTheme = "Theme";
 export const CookieLanguage = "Language";
 export const emptyFieldString = "-";
+export const defaultQueryStaleTime = 1000 * 60 * 60 * 24;

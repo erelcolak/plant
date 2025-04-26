@@ -1,6 +1,7 @@
 import { type AxiosRequestConfig } from "axios";
 
 import { Plant } from "@/types/Plant";
+import { Room } from "@/types/Room";
 
 export interface IRequestPromise<T = any> extends Promise<IRequestResponse<T>> {}
 
@@ -69,6 +70,17 @@ export function getConfigs(method: string, contentType: string, url: string, opt
 }
 export const basePath = "";
 
+export class Rooms {
+  static getAllRooms(options: IRequestOptions = {}): Promise<Room[]> {
+    return new Promise((resolve, reject) => {
+      let url = basePath + "/getAllRooms";
+
+      const configs: IRequestConfig = getConfigs("get", "application/json", url, options);
+
+      axios(configs, resolve, reject);
+    });
+  }
+}
 export class Plants {
   static getAllPlants(options: IRequestOptions = {}): Promise<Plant[]> {
     return new Promise((resolve, reject) => {
@@ -111,4 +123,54 @@ export class Plants {
       axios(configs, resolve, reject);
     });
   }
+  static addPlant(
+    params: {
+      body: IAddPlantInput;
+    } = {} as any,
+    options: IRequestOptions = {}
+  ): Promise<Plant> {
+    return new Promise((resolve, reject) => {
+      let url = basePath + "/addPlant";
+
+      const configs: IRequestConfig = getConfigs("post", "application/json", url, options);
+
+      let data = params.body;
+      configs.data = data;
+
+      axios(configs, resolve, reject);
+    });
+  }
+  static updatePlant(
+    params: {
+      /**  */
+      body: IUpdatePlantInput;
+    } = {} as any,
+    options: IRequestOptions = {}
+  ): Promise<Plant> {
+    return new Promise((resolve, reject) => {
+      let url = basePath + "/updatePlant";
+
+      const configs: IRequestConfig = getConfigs("put", "application/json", url, options);
+      let data = params.body;
+      configs.data = data;
+
+      axios(configs, resolve, reject);
+    });
+  }
+}
+
+export interface IUpdatePlantInput {
+  id: string;
+  name: string;
+  roomId: string;
+  plantType: string;
+  weeklyWaterNeeded: number;
+  expectedRelativeHumidity: number;
+}
+export interface IAddPlantInput {
+  name: string;
+  roomId: string;
+  plantType: string;
+  weeklyWaterNeeded: number;
+  expectedRelativeHumidity: number;
 }

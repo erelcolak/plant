@@ -9,6 +9,7 @@ import Col from "@/components/common/Col";
 import Container from "@/components/common/Container";
 import ContainerFullwidth from "@/components/common/ContainerFullwidth";
 import FilterControls from "@/components/common/FilterControls";
+import Loader from "@/components/common/Loader";
 import PlantCard from "@/components/common/PlantCard";
 
 import { convertTextToEnglish } from "@/utils/convertTextToEnglish";
@@ -26,7 +27,7 @@ const App = () => {
   // context hooks
 
   // queries
-  const { data } = useQuery({
+  const { data, isFetching } = useQuery({
     queryKey: ["getAllPlants"],
     queryFn: () => Plants.getAllPlants(),
   });
@@ -88,6 +89,7 @@ const App = () => {
   return (
     <ContainerFullwidth>
       <Container>
+        {isFetching && <Loader />}
         <FilterControls searchFields={searchFields} setSearchFields={setSearchFields} />
         <Col columnSize="4">
           {filteredData?.map((plant) => {

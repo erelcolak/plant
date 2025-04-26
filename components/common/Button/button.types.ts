@@ -4,7 +4,7 @@ import { SizeVariant } from "@/types/SizeVariant";
 
 export interface IButton {
   id?: string;
-  onClick: () => void;
+  onClick: any;
   text?: string;
   icon?: string;
   onlyIcon?: boolean;

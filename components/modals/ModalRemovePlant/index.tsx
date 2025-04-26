@@ -1,6 +1,6 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { Plants } from "@/service";
 
@@ -23,6 +23,7 @@ const ModalRemovePlant = () => {
   // state
 
   // context hooks
+  const queryClient = useQueryClient();
   const { showToast } = useToast();
   const { modalData, hideModal } = useModal();
   const _data = modalData[ModalTypes.ModalRemovePlant].data;
@@ -36,6 +37,9 @@ const ModalRemovePlant = () => {
         id: _data.plantId,
       }),
     onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["getAllPlants"],
+      });
       if (_callback) {
         _callback();
       }
