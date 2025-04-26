@@ -4,8 +4,9 @@ import { useQuery } from "@tanstack/react-query";
 
 import { Rooms } from "@/service";
 
-import { IGlobalDataContext, initialValuesGlobalDataContext } from "./globalDataContext.types";
 import { defaultQueryStaleTime } from "@/utils/constants";
+
+import { IGlobalDataContext, initialValuesGlobalDataContext } from "./globalDataContext.types";
 
 const GlobalDataContext = createContext<IGlobalDataContext>(initialValuesGlobalDataContext);
 
