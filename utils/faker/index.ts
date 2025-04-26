@@ -2,6 +2,7 @@ import { faker } from "@faker-js/faker";
 
 import { Plant } from "@/types/Plant";
 import { PlantType } from "@/types/PlantType";
+import { getRandomColorVariant } from "../getRandomColorVariant";
 
 export const createPlant = (): Plant => {
   return {
@@ -13,5 +14,6 @@ export const createPlant = (): Plant => {
     expectedRelativeHumidity: faker.number.int({ min: 30, max: 80 }),
     createDate: faker.date.past(),
     lastWateringDate: faker.date.recent({ days: 10 }),
+    colorVariant: getRandomColorVariant(),
   };
 };

@@ -8,7 +8,6 @@ import PlantMetric from "../PlantMetric";
 
 import { routes } from "@/utils/routes";
 
-import { ColorVariant } from "@/types/ColorVariant";
 import { PlantTypeLabels } from "@/types/PlantType";
 
 import { IPlantCard } from "./plantCard.types";
@@ -16,7 +15,7 @@ import styles from "./plantCard.module.scss";
 // PlantCard component
 const PlantCard = (props: IPlantCard) => {
   // destructuring props
-  const { plant, colorVariant = ColorVariant.light } = props;
+  const { plant } = props;
   // state
 
   // context hooks
@@ -33,7 +32,7 @@ const PlantCard = (props: IPlantCard) => {
 
   // render
   return (
-    <div className={classNames(styles.plantCard, styles[colorVariant])} onClick={() => router.push(routes.detail.url(plant.id))}>
+    <div className={classNames(styles.plantCard, styles[plant.colorVariant])} onClick={() => router.push(routes.detail.url(plant.id))}>
       <div className={styles.coverImage}>
         <Image width={130} height={143} alt="" src={`/images/plants/${plant.plantType}.png`} className={styles.image} />
       </div>
