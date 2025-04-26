@@ -4,4 +4,5 @@ export const siteHeaderMetaData = {
   robots: "noindex",
 };
 export const CookieTheme = "Theme";
+export const CookieLanguage = "Language";
 export const emptyFieldString = "-";

@@ -1,0 +1,11 @@
+@import "/styles/variables.scss";
+@import "/styles/mixins.scss";
+
+.dropdownMenu {
+  display: flex;
+  // width: min-content;
+}
+
+.dropdownMenuContainer {
+  @include dropdownContainer;
+}

@@ -5,6 +5,7 @@
   position: relative;
   border-radius: 1rem;
   cursor: pointer;
+  padding: 0.75rem;
   transition: box-shadow linear $default-animation-duration;
   border: 1px solid var(--color-gray-200);
   &:hover {
@@ -17,6 +18,9 @@
   height: auto;
 }
 .title {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   @include font-size-large;
   font-weight: $font-weight-900;
 }

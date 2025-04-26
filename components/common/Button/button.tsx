@@ -20,6 +20,7 @@ const Button = (props: IButton) => {
     colorVariant = ColorVariant.success,
     sizeVariant = SizeVariant.default,
     onClick,
+    htmlRef,
   } = props;
   // state
 
@@ -42,6 +43,7 @@ const Button = (props: IButton) => {
       className={classNames(styles.button, styles[alignVariant], styles[colorVariant], styles[sizeVariant], onlyIcon && styles.onlyIcon)}
       type="button"
       onClick={onClick}
+      ref={htmlRef}
     >
       {icon && <i className={classNames(styles.icon, `bi-${icon}`)}></i>}
       {text && !onlyIcon && <span className={styles.text}>{text}</span>}

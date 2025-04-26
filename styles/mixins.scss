@@ -48,3 +48,17 @@
     background-color: darken($background-color, 4%);
   }
 }
+
+// DROPDOWN
+@mixin dropdownContainer {
+  position: absolute;
+  padding: 0.25rem;
+  width: 20rem;
+  z-index: 1001;
+  flex-grow: 1;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.5rem;
+  outline: 1px solid transparent;
+  background-color: var(--color-white);
+  @include boxshadow;
+}

@@ -18,6 +18,7 @@ const UserMenu = () => {
 
   // context hooks
   const { theme, switchTheme } = useTheme();
+
   // queries
 
   // mutations

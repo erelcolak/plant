@@ -2,8 +2,8 @@
 
 import Container from "@/components/common/Container";
 import ContainerFullwidth from "@/components/common/ContainerFullwidth";
-
 import Logo from "../../common/Logo";
+
 import UserMenu from "./components/UserMenu";
 import styles from "./header.module.scss";
 

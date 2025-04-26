@@ -8,7 +8,6 @@ import { PlantTypeLabels } from "@/types/PlantType";
 
 import { IPlantCard } from "./plantCard.types";
 import styles from "./plantCard.module.scss";
-
 // PlantCard component
 const PlantCard = (props: IPlantCard) => {
   // destructuring props

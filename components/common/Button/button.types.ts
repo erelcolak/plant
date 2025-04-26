@@ -11,4 +11,5 @@ export interface IButton {
   colorVariant?: ColorVariant;
   alignVariant?: AlignVariant;
   sizeVariant?: SizeVariant;
+  htmlRef?: any;
 }
