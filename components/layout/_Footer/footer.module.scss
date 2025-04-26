@@ -1,2 +1,9 @@
 .footer {
+  border-top: 3px solid var(--color-green-500);
+}
+.footerMenu {
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
 }

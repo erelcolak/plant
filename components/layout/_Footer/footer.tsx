@@ -1,6 +1,8 @@
 "use client";
 
+import Container from "@/components/common/Container";
 import ContainerFullwidth from "@/components/common/ContainerFullwidth";
+import Logo from "../../common/Logo";
 
 import styles from "./footer.module.scss";
 
@@ -25,7 +27,11 @@ const Footer = () => {
   // render
   return (
     <ContainerFullwidth className={styles.footer}>
-      <></>
+      <Container>
+        <div className={styles.footerMenu}>
+          <Logo />
+        </div>
+      </Container>
     </ContainerFullwidth>
   );
 };

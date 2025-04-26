@@ -2,7 +2,7 @@
 
 .col {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   align-items: flex-start;
 
   @media (max-width: $breakpoint-lg) {
