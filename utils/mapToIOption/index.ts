@@ -1,4 +1,4 @@
-import { IOption } from "@/components/form/Select/select.types";
+import { IOption } from "@/types/Option";
 
 export const mapEntityToIOption = (item: any | null = null): IOption | null => {
   if (item === null) {
