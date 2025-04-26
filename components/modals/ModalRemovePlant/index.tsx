@@ -1,10 +1,20 @@
 "use client";
 
+import { useMutation } from "@tanstack/react-query";
+
+import { Plants } from "@/service";
+
+import CallToAction from "@/components/common/CallToAction/callToAction";
 import Modal from "@/components/common/Modal";
-import Input from "@/components/form/Input";
+import { ToastStatus } from "@/components/common/Toast/toast.types";
 
 import { ModalTypes } from "@/contexts/ModalContext/modalContext.types";
 import useModal from "@/hooks/useModal";
+import useToast from "@/hooks/useToast";
+
+import { toastMessages } from "@/utils/toastMessages";
+
+import { ColorVariant } from "@/types/ColorVariant";
 
 // ModalRemovePlant component
 const ModalRemovePlant = () => {
@@ -13,14 +23,36 @@ const ModalRemovePlant = () => {
   // state
 
   // context hooks
-  const { modalData } = useModal();
-
+  const { showToast } = useToast();
+  const { modalData, hideModal } = useModal();
   const _data = modalData[ModalTypes.ModalRemovePlant].data;
   const _callback = modalData[ModalTypes.ModalRemovePlant].callback;
   // queries
 
   // mutations
-
+  const removePlantByIdMutation = useMutation({
+    mutationFn: () =>
+      Plants.removePlantById({
+        id: _data.plantId,
+      }),
+    onSuccess: () => {
+      if (_callback) {
+        _callback();
+      }
+      showToast({
+        text: toastMessages.removePlant.success,
+        status: ToastStatus.success,
+      });
+    },
+    onError: () => {
+      showToast({
+        text: toastMessages.removePlant.failed,
+      });
+    },
+    onSettled: () => {
+      hideModal(ModalTypes.ModalRemovePlant);
+    },
+  });
   // formik
 
   // effect
@@ -31,15 +63,17 @@ const ModalRemovePlant = () => {
   return (
     <Modal
       id={ModalTypes.ModalRemovePlant}
-      loading={false}
+      loading={removePlantByIdMutation.isPending}
       footerRightButton={{
+        colorVariant: ColorVariant.danger,
+        icon: "trash",
         text: "Sil",
         onClick: () => {
-          // mutation
+          removePlantByIdMutation.mutate();
         },
       }}
     >
-      <Input id="lorem" value="saşldfkjaislşdfkaildkf" onChange={(e) => {}} label="Bitki Adı" info="Bitki adını giriniz" />
+      <CallToAction icon="trash" title="Bu Bitkiyi Silmek Üzeresiniz" subtitle="Bu bitkiyi silmek istedinizden emin misiniz?" />
     </Modal>
   );
 };

@@ -8,4 +8,5 @@ export interface IInput extends Omit<IFormItem, "children"> {
   disabled?: boolean;
   type?: "text" | "number";
   inputRef?: any;
+  rounded?: boolean;
 }

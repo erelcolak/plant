@@ -18,11 +18,13 @@ export const initialValuesModals: TModals = {
   [ModalTypes.ModalRemovePlant]: false,
 };
 export type ModalDataMap = {
-  [ModalTypes.ModalRemovePlant]: BaseModalData<{}>;
+  [ModalTypes.ModalRemovePlant]: BaseModalData<{ plantId: string }>;
 };
 export const initialValuesModalData: TModalData = {
   [ModalTypes.ModalRemovePlant]: {
-    data: {},
+    data: {
+      plantId: "",
+    },
   },
 };
 

@@ -1,0 +1,30 @@
+@import "/styles/variables.scss";
+@import "/styles/mixins.scss";
+
+.callToAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.icon {
+  font-size: 64px;
+  width: 10rem;
+  height: 10rem;
+  border: 3px solid var(--color-gray-200);
+  border-radius: 10rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  @include font-size-large;
+  font-weight: $font-weight-700;
+  color: var(--color-gray-700);
+}
+.subtitle {
+  @include font-size-default;
+  font-weight: $font-weight-400;
+  color: var(--color-gray-400);
+}

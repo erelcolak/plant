@@ -1,8 +1,8 @@
-import { SortOrder, PageableInput } from "@/types/SearchFields";
+import { PageableInput, SortOrder } from "@/types/SearchFields";
 
 export const initialValueSearchFieldPaginatin: PageableInput = {
   number: 0,
   size: 15,
-  sortOrder: SortOrder.DESC,
+  sortOrder: SortOrder.ASC,
   sortBy: "createDate",
 };

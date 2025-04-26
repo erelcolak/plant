@@ -1,7 +1,7 @@
 "use client";
 
 import Input from "@/components/form/Input";
-import DropdownMenu from "../DropdownMenu";
+import Button from "../Button/button";
 
 import { ColorVariant } from "@/types/ColorVariant";
 import { SortOrder } from "@/types/SearchFields";
@@ -28,11 +28,13 @@ const FilterControls = (props: IFilterControls) => {
   // other variables/functions/handlers
 
   // render
+
   return (
     <div className={styles.filterControls}>
       <Input
         id="searchPlant"
         placeholder="Ara..."
+        rounded
         value={searchFields.searchTerm}
         onChange={(e: any) => {
           setSearchFields({
@@ -41,42 +43,35 @@ const FilterControls = (props: IFilterControls) => {
           });
         }}
       />
-      <DropdownMenu
-        id="SortPlants"
-        dropdownButton={{
-          onClick: () => null,
-          icon: "filter",
-          onlyIcon: true,
-          colorVariant: ColorVariant.light,
+      <Button
+        colorVariant={ColorVariant.light}
+        text="Tarihe Göre Sırala"
+        icon="calendar"
+        onClick={() => {
+          setSearchFields({
+            ...searchFields,
+            pageableInput: {
+              ...searchFields.pageableInput,
+              sortBy: "createDate",
+              sortOrder: searchFields.pageableInput.sortOrder === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC,
+            },
+          });
         }}
-        dropdownMenuItems={[
-          {
-            text: "Oluşturma Tarihine Göre (Artan)",
-            onClick: () => {
-              setSearchFields({
-                ...searchFields,
-                pageableInput: {
-                  ...searchFields.pageableInput,
-                  sortBy: "createDate",
-                  sortOrder: SortOrder.ASC,
-                },
-              });
+      />
+      <Button
+        colorVariant={ColorVariant.light}
+        icon="droplet"
+        text="Su İhtiyacına Göre Sırala"
+        onClick={() => {
+          setSearchFields({
+            ...searchFields,
+            pageableInput: {
+              ...searchFields.pageableInput,
+              sortBy: "weeklyWaterNeeded",
+              sortOrder: searchFields.pageableInput.sortOrder === SortOrder.DESC ? SortOrder.ASC : SortOrder.DESC,
             },
-          },
-          {
-            text: "Oluşturma Tarihine Göre (Azalan)",
-            onClick: () => {
-              setSearchFields({
-                ...searchFields,
-                pageableInput: {
-                  ...searchFields.pageableInput,
-                  sortBy: "createDate",
-                  sortOrder: SortOrder.DESC,
-                },
-              });
-            },
-          },
-        ]}
+          });
+        }}
       />
     </div>
   );

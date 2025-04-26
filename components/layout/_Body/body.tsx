@@ -20,7 +20,7 @@ const Body = (props: IBody) => {
   // other variables/functions/handlers
 
   // render
-  return <ContainerFullwidth className={styles.footer}>{children}</ContainerFullwidth>;
+  return <ContainerFullwidth className={styles.body}>{children}</ContainerFullwidth>;
 };
 
 // export

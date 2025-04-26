@@ -2,6 +2,8 @@
 
 import { createContext, useState } from "react";
 
+import ModalRemovePlant from "@/components/modals/ModalRemovePlant";
+
 import { IModalContext, initialValuesModalContext, initialValuesModalData, TModalData, TModals } from "./modalContext.types";
 
 const ModalContext = createContext<IModalContext>(initialValuesModalContext);
@@ -36,6 +38,7 @@ const ModalContextProvider = (props: any) => {
       }}
     >
       {props.children}
+      {modals["ModalRemovePlant"] && <ModalRemovePlant />}
     </ModalContext.Provider>
   );
 };

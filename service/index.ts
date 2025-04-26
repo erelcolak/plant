@@ -95,4 +95,20 @@ export class Plants {
       axios(configs, resolve, reject);
     });
   }
+  static removePlantById(
+    params: {
+      /**  */
+      id: string;
+    } = {} as any,
+    options: IRequestOptions = {}
+  ): Promise<Plant> {
+    return new Promise((resolve, reject) => {
+      let url = basePath + "/removePlantById";
+
+      const configs: IRequestConfig = getConfigs("delete", "application/json", url, options);
+      configs.params = { id: params["id"] };
+
+      axios(configs, resolve, reject);
+    });
+  }
 }

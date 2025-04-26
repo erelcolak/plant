@@ -12,7 +12,7 @@ import styles from "./input.module.scss";
 // Input component
 const Input = (props: IInput) => {
   // destructuring props
-  const { id, onChange, value, disabled, error, info, inputRef, label, placeholder, type = "text", sizeVariant = SizeVariant.default } = props;
+  const { id, onChange, value, disabled, error, info, inputRef, label, placeholder, type = "text", sizeVariant = SizeVariant.default, rounded = false } = props;
   // state
 
   // context hooks
@@ -31,7 +31,7 @@ const Input = (props: IInput) => {
   return (
     <FormItem label={label} error={error} info={info}>
       <input
-        className={classNames(styles.input, styles[sizeVariant], disabled && styles.disabled, error && styles.error)}
+        className={classNames(styles.input, styles[sizeVariant], disabled && styles.disabled, error && styles.error, rounded && styles.rounded)}
         disabled={disabled}
         id={id}
         name={id}

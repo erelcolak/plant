@@ -15,7 +15,7 @@ const Detail = ({ params }: any) => {
   // context hooks
 
   // queries
-  const { data, isFetching } = useQuery({
+  const { data } = useQuery({
     queryKey: ["getPlantById", params.id],
     queryFn: () =>
       Plants.getPlantById({
@@ -27,7 +27,7 @@ const Detail = ({ params }: any) => {
   // formik
 
   // effect
-  console.log(data);
+
   // other variables/functions/handlers
   if (!data) return null;
   // render

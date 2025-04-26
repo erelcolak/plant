@@ -9,6 +9,7 @@ import ContainerFullwidth from "../ContainerFullwidth";
 import { PlantTypeLabels } from "@/types/PlantType";
 
 import { IPlantDetail } from "./plantDetail.types";
+import Controls from "./components/Controls";
 import Heading from "./components/Heading";
 import styles from "./plantDetail.module.scss";
 // PlantDetail component
@@ -36,6 +37,7 @@ const PlantDetail = (props: IPlantDetail) => {
         <Col columnSize="2">
           <Col>
             <Heading title={PlantTypeLabels[plant.plantType]} subtitle={plant.name} />
+            <Controls plantId={plant.id} />
           </Col>
           <Col>
             <Image width={650} height={715} alt="" src={`/images/plants/${plant.plantType}.png`} className={styles.image} />
