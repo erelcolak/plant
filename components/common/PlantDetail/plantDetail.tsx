@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import classNames from "classnames";
 import { useQuery } from "@tanstack/react-query";
 
 import { Plants } from "@/service";
@@ -49,7 +50,7 @@ const PlantDetail = (props: IPlantDetail) => {
 
   // render
   return (
-    <ContainerFullwidth>
+    <ContainerFullwidth className={styles.plantDetail}>
       <Container>
         {plantIsFetching || (plantStatsIsFetching && <Loader />)}
         {plant && (
@@ -61,6 +62,7 @@ const PlantDetail = (props: IPlantDetail) => {
             </Col>
             <Col>
               <Image width={650} height={715} alt="" src={`/images/plants/${plant.plantType}.png`} className={styles.image} />
+              <div className={classNames(styles.overlay, styles[plant.colorVariant])}></div>
             </Col>
           </Col>
         )}

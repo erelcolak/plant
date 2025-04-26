@@ -2,28 +2,42 @@
 @import "/styles/mixins.scss";
 
 .plantCard {
+  position: relative;
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
   cursor: pointer;
-  border: 1px solid var(--color-gray-200);
-  transition: box-shadow linear $default-animation-duration;
+  border: 1px solid transparent;
 
   &:hover {
-    @include boxshadow;
+    .overlay {
+      @include boxshadow;
+    }
     .controls {
       opacity: 1;
     }
   }
 }
-.coverImage {
+.overlay {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 1rem;
+  height: 80%;
+  width: 100%;
+  transition: box-shadow linear $default-animation-duration;
 }
 .image {
   object-fit: cover;
   width: 100%;
   height: auto;
+  position: relative;
+  z-index: 1;
 }
 .titleContainer {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   padding-inline: 1rem;
@@ -50,6 +64,8 @@
   z-index: 1;
 }
 .controls {
+  position: relative;
+  z-index: 2;
   display: flex;
   gap: 0.75rem;
   opacity: 0.2;
@@ -61,7 +77,9 @@
 
 // colorVariant
 .primary {
-  background-color: var(--color-indigo-100);
+  .overlay {
+    background-color: var(--color-indigo-100);
+  }
   .subtitle {
     color: var(--color-indigo-900);
   }
@@ -73,7 +91,9 @@
   }
 }
 .secondary {
-  background-color: var(--color-teal-100);
+  .overlay {
+    background-color: var(--color-teal-100);
+  }
   .subtitle {
     color: var(--color-teal-900);
   }
@@ -85,7 +105,9 @@
   }
 }
 .success {
-  background-color: var(--color-green-100);
+  .overlay {
+    background-color: var(--color-green-100);
+  }
   .subtitle {
     color: var(--color-green-900);
   }
@@ -97,7 +119,9 @@
   }
 }
 .warning {
-  background-color: var(--color-yellow-100);
+  .overlay {
+    background-color: var(--color-yellow-100);
+  }
   .subtitle {
     color: var(--color-yellow-900);
   }
@@ -109,7 +133,9 @@
   }
 }
 .danger {
-  background-color: var(--color-red-100);
+  .overlay {
+    background-color: var(--color-red-100);
+  }
   .subtitle {
     color: var(--color-red-900);
   }
@@ -121,7 +147,9 @@
   }
 }
 .light {
-  background-color: var(--color-gray-100);
+  .overlay {
+    background-color: var(--color-gray-100);
+  }
   .subtitle {
     color: var(--color-gray-900);
   }
@@ -133,7 +161,9 @@
   }
 }
 .dark {
-  background-color: var(--color-dark-100);
+  .overlay {
+    background-color: var(--color-dark-100);
+  }
   .subtitle {
     color: var(--color-dark-900);
   }
@@ -145,7 +175,9 @@
   }
 }
 .pink {
-  background-color: var(--color-pink-100);
+  .overlay {
+    background-color: var(--color-pink-100);
+  }
   .subtitle {
     color: var(--color-pink-900);
   }
@@ -157,7 +189,9 @@
   }
 }
 .orange {
-  background-color: var(--color-orange-100);
+  .overlay {
+    background-color: var(--color-orange-100);
+  }
   .subtitle {
     color: var(--color-orange-900);
   }
@@ -169,7 +203,9 @@
   }
 }
 .blue {
-  background-color: var(--color-blue-100);
+  .overlay {
+    background-color: var(--color-blue-100);
+  }
   .subtitle {
     color: var(--color-blue-900);
   }
