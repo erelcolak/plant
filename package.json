@@ -11,7 +11,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "@tanstack/query-sync-storage-persister": "^5.56.2",
-    "@tanstack/react-query": "^5.28.6",
+    "@tanstack/react-query": "^5.74.4",
     "@tanstack/react-query-persist-client": "^5.56.2",
     "axios": "^1.9.0",
     "bootstrap-icons": "^1.11.3",
@@ -25,9 +25,11 @@
     "react-popper": "^2.3.0",
     "sass": "^1.72.0",
     "sharp": "^0.33.4",
+    "uuid": "^11.1.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.7.0",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",

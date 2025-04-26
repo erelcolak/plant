@@ -1,7 +1,7 @@
 import { ColorVariant } from "@/types/ColorVariant";
-import { PlantType } from "@/types/PlantType";
+import { Plant } from "@/types/Plant";
 
 export interface IPlantCard {
-  plantType: PlantType;
+  plant: Plant;
   colorVariant?: ColorVariant;
 }

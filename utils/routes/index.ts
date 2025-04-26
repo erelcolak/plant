@@ -3,4 +3,8 @@ export const routes = {
     url: "/",
     pathname: "/",
   },
+  detail: {
+    url: (id?: string) => `/detail/${id}`,
+    pathname: "/detail",
+  },
 };

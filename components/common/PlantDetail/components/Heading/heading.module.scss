@@ -1,0 +1,22 @@
+@import "/styles/variables.scss";
+@import "/styles/mixins.scss";
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.title {
+  margin: 0;
+  font-size: 8rem;
+  line-height: 8rem;
+  font-weight: $font-weight-900;
+  color: var(--color-gray-700);
+}
+.subtitle {
+  margin: 0;
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: $font-weight-300;
+  color: var(--color-gray-400);
+}

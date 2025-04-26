@@ -2,25 +2,75 @@
 @import "/styles/mixins.scss";
 
 .plantCard {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   border-radius: 1rem;
   cursor: pointer;
-  padding: 0.75rem;
-  transition: box-shadow linear $default-animation-duration;
   border: 1px solid var(--color-gray-200);
+  transition: box-shadow linear $default-animation-duration;
   &:hover {
-    border-color: transparent;
     @include boxshadow;
   }
 }
+.coverImage {
+}
 .image {
+  object-fit: cover;
   width: 100%;
   height: auto;
 }
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-inline: 1rem;
+}
 .title {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
   @include font-size-large;
   font-weight: $font-weight-900;
+  color: var(--color-gray-700);
+}
+.subtitle {
+  @include font-size-default;
+  font-weight: $font-weight-300;
+}
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  padding: 1rem;
+  z-index: 1;
+}
+
+// colorVariant
+.primary {
+  background-color: var(--color-indigo-100);
+}
+.secondary {
+  background-color: var(--color-teal-100);
+}
+.success {
+  background-color: var(--color-green-100);
+}
+.warning {
+  background-color: var(--color-yellow-100);
+}
+.danger {
+  background-color: var(--color-red-100);
+}
+.light {
+  background-color: var(--color-gray-100);
+}
+.dark {
+  background-color: var(--color-dark-100);
+}
+.pink {
+  background-color: var(--color-pink-100);
+}
+.orange {
+  background-color: var(--color-orange-100);
+}
+.blue {
+  background-color: var(--color-blue-100);
 }

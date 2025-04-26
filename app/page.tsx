@@ -1,5 +1,9 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
+
+import { Plants } from "@/service";
+
 import Col from "@/components/common/Col";
 import Container from "@/components/common/Container";
 import ContainerFullwidth from "@/components/common/ContainerFullwidth";
@@ -9,8 +13,7 @@ import ModalRemovePlant from "@/components/modals/ModalRemovePlant";
 import { ModalTypes } from "@/contexts/ModalContext/modalContext.types";
 import useModal from "@/hooks/useModal";
 
-import { ColorVariant } from "@/types/ColorVariant";
-import { PlantType } from "@/types/PlantType";
+import { getRandomColorVariant } from "@/utils/getRandomColorVariant";
 
 // App component
 const App = () => {
@@ -21,7 +24,10 @@ const App = () => {
   // context hooks
   const { modals } = useModal();
   // queries
-
+  const { data } = useQuery({
+    queryKey: ["getAllPlants"],
+    queryFn: () => Plants.getAllPlants(),
+  });
   // mutations
 
   // formik
@@ -35,16 +41,9 @@ const App = () => {
     <ContainerFullwidth>
       <Container>
         <Col columnSize="4">
-          <PlantCard plantType={PlantType.CRASSULA_OVATA} colorVariant={ColorVariant.blue} />
-          <PlantCard plantType={PlantType.DAISY} colorVariant={ColorVariant.danger} />
-          <PlantCard plantType={PlantType.GERBERA} colorVariant={ColorVariant.dark} />
-          <PlantCard plantType={PlantType.GUZMANIA} colorVariant={ColorVariant.light} />
-          <PlantCard plantType={PlantType.LILIUM} colorVariant={ColorVariant.orange} />
-          <PlantCard plantType={PlantType.OLIVE} colorVariant={ColorVariant.pink} />
-          <PlantCard plantType={PlantType.ORCHID} colorVariant={ColorVariant.primary} />
-          <PlantCard plantType={PlantType.ROSE} colorVariant={ColorVariant.secondary} />
-          <PlantCard plantType={PlantType.SPATIFILYUM} colorVariant={ColorVariant.success} />
-          <PlantCard plantType={PlantType.SUCCULENT} colorVariant={ColorVariant.warning} />
+          {data?.map((plant) => {
+            return <PlantCard key={`PlantCard-${plant.id}`} plant={plant} colorVariant={getRandomColorVariant()} />;
+          })}
         </Col>
       </Container>
       {modals[ModalTypes.ModalRemovePlant] && <ModalRemovePlant />}
