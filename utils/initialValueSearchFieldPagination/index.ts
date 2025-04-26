@@ -1,8 +1,8 @@
-import { EnumPageableInputSortOrder, PageableInput } from "@/types/SearchFields";
+import { SortOrder, PageableInput } from "@/types/SearchFields";
 
 export const initialValueSearchFieldPaginatin: PageableInput = {
   number: 0,
   size: 15,
-  sortOrder: EnumPageableInputSortOrder.DESC,
+  sortOrder: SortOrder.DESC,
   sortBy: "createDate",
 };

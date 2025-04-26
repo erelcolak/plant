@@ -6,9 +6,9 @@ export interface PageableInput {
   size: number;
   number: number;
   sortBy: string;
-  sortOrder: EnumPageableInputSortOrder;
+  sortOrder: SortOrder;
 }
-export enum EnumPageableInputSortOrder {
+export enum SortOrder {
   ASC = "ASC",
   DESC = "DESC",
 }

@@ -6,6 +6,7 @@ import classNames from "classnames";
 
 import PlantMetric from "../PlantMetric";
 
+import { dateFormatter } from "@/utils/dateFormatter";
 import { routes } from "@/utils/routes";
 
 import { PlantTypeLabels } from "@/types/PlantType";
@@ -39,6 +40,7 @@ const PlantCard = (props: IPlantCard) => {
       <div className={styles.titleContainer}>
         <div className={styles.title}>{PlantTypeLabels[plant.plantType]}</div>
         <div className={styles.subtitle}>{plant.name}</div>
+        <div className={styles.date}>{dateFormatter(plant.createDate)}</div>
       </div>
       <div className={styles.metrics}>
         <PlantMetric icon="droplet" title="SU MİKTARI" subtitle={plant.weeklyWaterNeeded.toString()} unit="ml" />
