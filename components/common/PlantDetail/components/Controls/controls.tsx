@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 import Button from "@/components/common/Button/button";
 
@@ -22,6 +23,7 @@ const Controls = (props: IControls) => {
   // state
 
   // context hooks
+  const t = useTranslations();
   const router = useRouter();
   const { showModal } = useModal();
   // queries
@@ -39,7 +41,7 @@ const Controls = (props: IControls) => {
     <div className={styles.controls}>
       <Button
         icon="trash"
-        text="Sil"
+        text={t("PlantDetail-Button-Delete")}
         colorVariant={ColorVariant.light}
         onClick={() => {
           showModal(ModalTypes.ModalRemovePlant, {
@@ -54,7 +56,7 @@ const Controls = (props: IControls) => {
       />
       <Button
         icon="pencil"
-        text="Düzenle"
+        text={t("PlantDetail-Button-Edit")}
         colorVariant={ColorVariant.secondary}
         onClick={() => {
           showModal(ModalTypes.ModalAddPlant, {

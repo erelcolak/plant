@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 
 import MainLayout from "@/components/layout/_MainLayout";
 
@@ -18,25 +20,30 @@ const urbanist = Urbanist({ subsets: ["latin", "latin-ext"], variable: "--font-u
 
 export const metadata: Metadata = siteHeaderMetaData;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locales = await getMessages();
+  const language = await getLocale();
+
   return (
-    <html lang="en">
+    <html lang={language}>
       <body id="body" className={urbanist.className}>
-        <ThemeContextProvider>
-          <ToastContextProvider>
-            <ServiceContextProvider>
-              <GlobalDataContextProvider>
-                <ModalContextProvider>
-                  <MainLayout>{children}</MainLayout>
-                </ModalContextProvider>
-              </GlobalDataContextProvider>
-            </ServiceContextProvider>
-          </ToastContextProvider>
-        </ThemeContextProvider>
+        <NextIntlClientProvider messages={locales}>
+          <ThemeContextProvider>
+            <ToastContextProvider>
+              <ServiceContextProvider>
+                <GlobalDataContextProvider>
+                  <ModalContextProvider>
+                    <MainLayout>{children}</MainLayout>
+                  </ModalContextProvider>
+                </GlobalDataContextProvider>
+              </ServiceContextProvider>
+            </ToastContextProvider>
+          </ThemeContextProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

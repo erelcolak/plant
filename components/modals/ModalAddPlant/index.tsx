@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
@@ -30,6 +31,7 @@ const ModalAddPlant = () => {
   // state
 
   // context hooks
+  const t = useTranslations();
   const queryClient = useQueryClient();
   const { showToast } = useToast();
   const { getAllRoomsData, getAllRoomsIsFetching } = useGlobalData();
@@ -142,25 +144,25 @@ const ModalAddPlant = () => {
       loading={getPlantByIdIsFetching || addPlantMutation.isPending || updatePlantMutation.isPending}
       footerRightButton={{
         icon: _processType === ProcessType.UPDATE ? "arrow-clockwise" : "plus-lg",
-        text: _processType === ProcessType.UPDATE ? "Güncelle" : "Ekle",
+        text: _processType === ProcessType.UPDATE ? t("ModalAddPlan-Button-Update") : t("ModalAddPlan-Button-Add"),
         onClick: () => {
           formik.handleSubmit();
         },
       }}
     >
-      {<CallToAction icon="plus-lg" title="Yeni Bitki" subtitle="Yeni bir bitki eklemek için bilgilerini giriniz" />}
+      {<CallToAction icon="plus-lg" title={t("ModalAddPlan-CTA-Add-Title")} subtitle={t("ModalAddPlan-CTA-Add-Subtitle")} />}
       <Input
         id="name"
-        label="Bitki Adı"
-        info="Bitkinize bir isim veriniz"
+        label={t("ModalAddPlan-FormItem-Name-Label")}
+        info={t("ModalAddPlan-FormItem-Name-Info")}
         value={formik.values.name}
         onChange={formik.handleChange}
         error={formik.errors.name}
       />
       <Select
         id="roomId"
-        label="Oda Seçimi"
-        info="Evinizin her köşesini botanik bahçesine çevirebilirsiniz"
+        label={t("ModalAddPlan-FormItem-Room-Label")}
+        info={t("ModalAddPlan-FormItem-Room-Info")}
         options={mapEntityArrayToIOptionArray(getAllRoomsData || [])}
         value={formik.values.roomId}
         onChange={(e: any) => {
@@ -171,8 +173,8 @@ const ModalAddPlant = () => {
       />
       <Select
         id="plantType"
-        label="Bitki Türü Seçimi"
-        info="Hangi bitkiye sahipsiniz?"
+        label={t("ModalAddPlan-FormItem-PlantType-Label")}
+        info={t("ModalAddPlan-FormItem-PlantType-Info")}
         options={PlantTypeMapping || []}
         value={formik.values.plantType?.toString()}
         onChange={(e: any) => {
@@ -183,16 +185,16 @@ const ModalAddPlant = () => {
       />
       <Input
         id="weeklyWaterNeeded"
-        label="Haftalık Su İhtiyacı (ml)"
-        info="Bitkinizin haftalık ne kadar su ihtiyacı olduğunu yazınız"
+        label={t("ModalAddPlan-FormItem-WeeklyWaterNeeded-Label")}
+        info={t("ModalAddPlan-FormItem-WeeklyWaterNeeded-Info")}
         value={formik.values.weeklyWaterNeeded}
         onChange={formik.handleChange}
         error={formik.errors.weeklyWaterNeeded}
       />
       <Input
         id="expectedRelativeHumidity"
-        label="Haftalık Nem Bilgisi"
-        info="Bitkinizin haftalık ne kadar neme ihtiyacı olduğunu yazınız"
+        label={t("ModalAddPlan-FormItem-ExpectedHumidity-Label")}
+        info={t("ModalAddPlan-FormItem-ExpectedHumidity-Info")}
         value={formik.values.expectedRelativeHumidity}
         onChange={formik.handleChange}
         error={formik.errors.expectedRelativeHumidity}

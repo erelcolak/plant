@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { Plants } from "@/service";
@@ -23,6 +24,7 @@ const ModalRemovePlant = () => {
   // state
 
   // context hooks
+  const t = useTranslations();
   const queryClient = useQueryClient();
   const { showToast } = useToast();
   const { modalData, hideModal } = useModal();
@@ -71,13 +73,13 @@ const ModalRemovePlant = () => {
       footerRightButton={{
         colorVariant: ColorVariant.danger,
         icon: "trash",
-        text: "Sil",
+        text: t("ModalRemovePlant-Button-Delete"),
         onClick: () => {
           removePlantByIdMutation.mutate();
         },
       }}
     >
-      <CallToAction icon="trash" title="Bu Bitkiyi Silmek Üzeresiniz" subtitle="Bu bitkiyi silmek istedinizden emin misiniz?" />
+      <CallToAction icon="trash" title={t("ModalRemovePlant-CTA-Title")} subtitle={t("ModalRemovePlant-CTA-Subtitle")} />
     </Modal>
   );
 };

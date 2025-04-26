@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import Input from "@/components/form/Input";
 import Button from "../Button/button";
 
@@ -16,7 +18,7 @@ const FilterControls = (props: IFilterControls) => {
   // state
 
   // context hooks
-
+  const t = useTranslations();
   // queries
 
   // mutations
@@ -33,7 +35,7 @@ const FilterControls = (props: IFilterControls) => {
     <div className={styles.filterControls}>
       <Input
         id="searchPlant"
-        placeholder="Ara..."
+        placeholder={t("FilterControl-Search")}
         rounded
         value={searchFields.searchTerm}
         onChange={(e: any) => {
@@ -45,7 +47,7 @@ const FilterControls = (props: IFilterControls) => {
       />
       <Button
         colorVariant={ColorVariant.light}
-        text="Tarihe Göre Sırala"
+        text={t("FilterControl-SortByDate")}
         icon="calendar"
         onClick={() => {
           setSearchFields({
@@ -61,7 +63,7 @@ const FilterControls = (props: IFilterControls) => {
       <Button
         colorVariant={ColorVariant.light}
         icon="droplet"
-        text="Su İhtiyacına Göre Sırala"
+        text={t("FilterControl-SortByWater")}
         onClick={() => {
           setSearchFields({
             ...searchFields,

@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import Col from "../Col";
 import Container from "../Container";
 import ContainerFullwidth from "../ContainerFullwidth";
 import Loader from "../Loader";
-
-import { PlantTypeLabels } from "@/types/PlantType";
 
 import { IPlantDetail } from "./plantDetail.types";
 import Controls from "./components/Controls";
@@ -20,7 +19,7 @@ const PlantDetail = (props: IPlantDetail) => {
   // state
 
   // context hooks
-
+  const t = useTranslations();
   // queries
 
   // mutations
@@ -39,7 +38,7 @@ const PlantDetail = (props: IPlantDetail) => {
         {plant && (
           <Col columnSize="2">
             <Col>
-              <Heading title={PlantTypeLabels[plant.plantType]} subtitle={plant.name} />
+              <Heading title={t(`${plant.plantType}`)} subtitle={plant.name} />
               <Controls plantId={plant.id} />
             </Col>
             <Col>

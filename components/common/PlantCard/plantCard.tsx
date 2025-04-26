@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import classNames from "classnames";
 
 import Button from "../Button/button";
@@ -14,7 +15,6 @@ import { dateFormatter } from "@/utils/dateFormatter";
 import { routes } from "@/utils/routes";
 
 import { ColorVariant } from "@/types/ColorVariant";
-import { PlantTypeLabels } from "@/types/PlantType";
 import { ProcessType } from "@/types/ProcessType";
 import { SizeVariant } from "@/types/SizeVariant";
 
@@ -27,6 +27,7 @@ const PlantCard = (props: IPlantCard) => {
   // state
 
   // context hooks
+  const t = useTranslations();
   const router = useRouter();
   const { showModal } = useModal();
   // queries
@@ -46,13 +47,13 @@ const PlantCard = (props: IPlantCard) => {
         <Image width={130} height={143} alt="" src={`/images/plants/${plant.plantType}.png`} className={styles.image} />
       </div>
       <div className={styles.titleContainer}>
-        <div className={styles.title}>{PlantTypeLabels[plant.plantType]}</div>
+        <div className={styles.title}>{t(`${plant.plantType}`)}</div>
         <div className={styles.subtitle}>{plant.name}</div>
         <div className={styles.date}>{dateFormatter(plant.createDate)}</div>
       </div>
       <div className={styles.metrics}>
-        <PlantMetric icon="droplet" title="SU MİKTARI" subtitle={plant.weeklyWaterNeeded.toString()} unit="ml" />
-        <PlantMetric icon="moisture" title="NEM MİKTARI" subtitle={plant.expectedRelativeHumidity.toString()} unit="%" />
+        <PlantMetric icon="droplet" title={t("PlantMetric-WaterNeeded")} subtitle={plant.weeklyWaterNeeded.toString()} unit="ml" />
+        <PlantMetric icon="moisture" title={t("PlantMetric-HumidityNeeded")} subtitle={plant.expectedRelativeHumidity.toString()} unit="%" />
       </div>
       <div className={styles.controls}>
         <Button
