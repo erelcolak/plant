@@ -13,15 +13,20 @@ export type BaseModalData<T> = {
 export enum ModalTypes {
   ModalRemovePlant = "ModalRemovePlant",
   ModalAddPlant = "ModalAddPlant",
+  ModalAddWaterToPlant = "ModalAddWaterToPlant",
 }
 
 export const initialValuesModals: TModals = {
   [ModalTypes.ModalRemovePlant]: false,
   [ModalTypes.ModalAddPlant]: false,
+  [ModalTypes.ModalAddWaterToPlant]: false,
 };
 export type ModalDataMap = {
   [ModalTypes.ModalRemovePlant]: BaseModalData<{ plantId: string }>;
   [ModalTypes.ModalAddPlant]: BaseModalData<{
+    id?: string;
+  }>;
+  [ModalTypes.ModalAddWaterToPlant]: BaseModalData<{
     id?: string;
   }>;
 };
@@ -32,6 +37,11 @@ export const initialValuesModalData: TModalData = {
     },
   },
   [ModalTypes.ModalAddPlant]: {
+    data: {
+      id: "",
+    },
+  },
+  [ModalTypes.ModalAddWaterToPlant]: {
     data: {
       id: "",
     },

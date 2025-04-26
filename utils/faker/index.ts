@@ -1,6 +1,7 @@
 import { faker } from "@faker-js/faker";
 
 import { Plant } from "@/types/Plant";
+import { PlantStat } from "@/types/Plant/types";
 import { PlantType } from "@/types/PlantType";
 import { Room } from "@/types/Room";
 
@@ -17,6 +18,17 @@ export const createPlant = (): Plant => {
     createDate: faker.date.past(),
     lastWateringDate: faker.date.recent({ days: 10 }),
     colorVariant: getRandomColorVariant(),
+  };
+};
+
+export const createPlantStats = (): PlantStat => {
+  return {
+    plantData: faker.helpers.multiple(() => faker.number.int({ min: 1, max: 50 }), {
+      count: 7,
+    }),
+    weatherData: faker.helpers.multiple(() => faker.number.int({ min: 1, max: 50 }), {
+      count: 7,
+    }),
   };
 };
 

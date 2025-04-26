@@ -70,6 +70,17 @@ const Controls = (props: IControls) => {
           });
         }}
       />
+      <Button
+        icon="droplet"
+        text={t("PlantDetail-Button-Watering")}
+        onClick={() => {
+          showModal(ModalTypes.ModalAddWaterToPlant, {
+            data: {
+              id: plantId,
+            },
+          });
+        }}
+      />
     </div>
   );
 };

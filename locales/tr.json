@@ -1,4 +1,9 @@
 {
+  "ModalAddWaterToPlant-CTA-Title": "Bitki Sulama",
+  "ModalAddWaterToPlant-CTA-Subtitle": "Bitkinizin sağlığı için onu belirtilen periyotlarda nem ve sıcaklık oranını gözeterek sulamayı ihmal etmeyiniz",
+  "ModalAddWaterToPlant-Button-Complete": "Tamamla",
+  "Chart-Weather-Humidity": "Hava Nemi",
+  "Chart-Plant-Humidity": "Bitki Nemi",
   "Header-Button-AddNew": "Yeni Bitki Ekle",
   "FilterControl-Search": "Ara...",
   "FilterControl-SortByDate": "Tarihe Göre Sırala",
@@ -7,6 +12,7 @@
   "PlantMetric-HumidityNeeded": "NEM MİKTARI",
   "PlantDetail-Button-Delete": "Sil",
   "PlantDetail-Button-Edit": "Güncelle",
+  "PlantDetail-Button-Watering": "Bitki Sula",
   "ModalRemovePlant-Button-Delete": "Sil",
   "ModalRemovePlant-CTA-Title": "Bu bitkiyi silmek üzeresiniz",
   "ModalRemovePlant-CTA-Subtitle": "Bu işlemi yapmak istediğinizden emin misiniz? Bu işlem geri alınamaz",

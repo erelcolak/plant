@@ -12,3 +12,7 @@ export interface Plant {
   lastWateringDate: Date;
   colorVariant: ColorVariant;
 }
+export interface PlantStat {
+  plantData: number[];
+  weatherData: number[];
+}

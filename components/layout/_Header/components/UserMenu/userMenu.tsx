@@ -7,7 +7,6 @@ import Cookies from "js-cookie";
 import Button from "@/components/common/Button/button";
 
 import { ModalTypes } from "@/contexts/ModalContext/modalContext.types";
-import { Theme } from "@/contexts/ThemeContext/themeContext.types";
 import useModal from "@/hooks/useModal";
 import useTheme from "@/hooks/useTheme";
 
@@ -29,7 +28,7 @@ const UserMenu = () => {
   const t = useTranslations();
   const router = useRouter();
   const { showModal } = useModal();
-  const { theme, switchTheme } = useTheme();
+  const { switchTheme } = useTheme();
   const currentLanguage = Cookies.get(CookieLanguage);
   // queries
 
@@ -58,7 +57,7 @@ const UserMenu = () => {
         sizeVariant={SizeVariant.small}
         colorVariant={ColorVariant.light}
       />
-      <Button onClick={switchTheme} onlyIcon icon={theme === Theme.DARK ? "moon" : "sun"} sizeVariant={SizeVariant.small} colorVariant={ColorVariant.light} />
+      <Button onClick={switchTheme} onlyIcon icon={"sun"} sizeVariant={SizeVariant.small} colorVariant={ColorVariant.light} />
       <Button
         onClick={() => {
           if (currentLanguage === Language.EN.toString()) {

@@ -8,6 +8,7 @@ import ModalAddPlant from "@/components/modals/ModalAddPlant";
 import { IModalContext, initialValuesModalContext, initialValuesModalData, TModalData, TModals } from "./modalContext.types";
 
 const ModalRemovePlant = dynamic(() => import("@/components/modals/ModalRemovePlant"), { ssr: false });
+const ModalAddWaterToPlant = dynamic(() => import("@/components/modals/ModalAddWaterToPlant"), { ssr: false });
 const ModalContext = createContext<IModalContext>(initialValuesModalContext);
 
 // ModalContextProvider component
@@ -42,6 +43,7 @@ const ModalContextProvider = (props: any) => {
       {props.children}
       {modals["ModalRemovePlant"] && <ModalRemovePlant />}
       {modals["ModalAddPlant"] && <ModalAddPlant />}
+      {modals["ModalAddWaterToPlant"] && <ModalAddWaterToPlant />}
     </ModalContext.Provider>
   );
 };

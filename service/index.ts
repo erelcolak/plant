@@ -1,6 +1,7 @@
 import { type AxiosRequestConfig } from "axios";
 
 import { Plant } from "@/types/Plant";
+import { PlantStat } from "@/types/Plant/types";
 import { Room } from "@/types/Room";
 
 export interface IRequestPromise<T = any> extends Promise<IRequestResponse<T>> {}
@@ -107,13 +108,45 @@ export class Plants {
       axios(configs, resolve, reject);
     });
   }
+  static getPlantStatsByPlantId(
+    params: {
+      /**  */
+      id: string;
+    } = {} as any,
+    options: IRequestOptions = {}
+  ): Promise<PlantStat> {
+    return new Promise((resolve, reject) => {
+      let url = basePath + "/getPlantStatsByPlantId";
+
+      const configs: IRequestConfig = getConfigs("get", "application/json", url, options);
+      configs.params = { id: params["id"] };
+
+      axios(configs, resolve, reject);
+    });
+  }
+  static addWaterToPlant(
+    params: {
+      /**  */
+      id: string;
+    } = {} as any,
+    options: IRequestOptions = {}
+  ): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      let url = basePath + "/addWaterToPlant";
+
+      const configs: IRequestConfig = getConfigs("post", "application/json", url, options);
+      configs.params = { id: params["id"] };
+
+      axios(configs, resolve, reject);
+    });
+  }
   static removePlantById(
     params: {
       /**  */
       id: string;
     } = {} as any,
     options: IRequestOptions = {}
-  ): Promise<Plant> {
+  ): Promise<boolean> {
     return new Promise((resolve, reject) => {
       let url = basePath + "/removePlantById";
 
@@ -128,7 +161,7 @@ export class Plants {
       body: IAddPlantInput;
     } = {} as any,
     options: IRequestOptions = {}
-  ): Promise<Plant> {
+  ): Promise<boolean> {
     return new Promise((resolve, reject) => {
       let url = basePath + "/addPlant";
 
@@ -146,7 +179,7 @@ export class Plants {
       body: IUpdatePlantInput;
     } = {} as any,
     options: IRequestOptions = {}
-  ): Promise<Plant> {
+  ): Promise<boolean> {
     return new Promise((resolve, reject) => {
       let url = basePath + "/updatePlant";
 

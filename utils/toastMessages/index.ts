@@ -11,4 +11,8 @@ export const toastMessages = {
     success: "Bitki silindi",
     failed: "Bitki silinirken bir sorun oluştu",
   },
+  addWaterToPlant: {
+    success: "Bitkiye su verildi",
+    failed: "Bitkiye su verilirken bir sorun oluştu",
+  },
 };

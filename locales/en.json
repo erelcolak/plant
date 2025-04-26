@@ -1,4 +1,9 @@
 {
+  "ModalAddWaterToPlant-CTA-Title": "Plant Watering",
+  "ModalAddWaterToPlant-CTA-Subtitle": "Please do not forget to give some water in a specific period and please check for humidity and weather conditions for your plant's health",
+  "ModalAddWaterToPlant-Button-Complete": "Complete",
+  "Chart-Weather-Humidity": "Air Humidity",
+  "Chart-Plant-Humidity": "Plant Humidity",
   "Header-Button-AddNew": "Add New Plant",
   "FilterControl-Search": "Search...",
   "FilterControl-SortByDate": "Sort By Date",
@@ -7,6 +12,7 @@
   "PlantMetric-HumidityNeeded": "HUMIDITY",
   "PlantDetail-Button-Delete": "Delete",
   "PlantDetail-Button-Edit": "Update",
+  "PlantDetail-Button-Watering": "Plant Watering",
   "ModalRemovePlant-Button-Delete": "Delete",
   "ModalRemovePlant-CTA-Title": "You are about to delete this plant",
   "ModalRemovePlant-CTA-Subtitle": "Do you really want to delete this plant? This process can not be undone",
