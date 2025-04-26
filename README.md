@@ -32,6 +32,7 @@ URL: [http://localhost:3000](http://localhost:3000) with your browser to grow so
 - Hydration and Server Side Query Caching
 - Request Services
 - MVCC Software Design Pattern for BFF
+- Dockerized
 - Standardized Properties For Visuals
 - Client Side Filtering & Sorting
 - Context & Hook Architechture
