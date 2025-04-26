@@ -12,6 +12,9 @@
 
 ![delete](https://github.com/user-attachments/assets/099cf729-a3b1-433a-9edb-05362f98be91)
 
+## Preview Deployed URL
+
+URL: [https://plant-sage-eta.vercel.app/][https://plant-sage-eta.vercel.app/] to see in preview domain deployed via Vercel
 
 ## Getting Started
 
@@ -22,7 +25,7 @@ npm install
 npm run dev
 ```
 
-URL: [http://localhost:3000](http://localhost:3000) with your browser to grow some plants
+URL: [http://localhost:3000](http://localhost:3000) to grow some plants
 
 ## Features
 - Dark & Light Theme
