@@ -14,7 +14,7 @@
 
 ## Preview Deployed URL
 
-URL: [https://plant-sage-eta.vercel.app/][https://plant-sage-eta.vercel.app/] to see in preview domain deployed via Vercel
+URL: [https://plant-sage-eta.vercel.app/](https://plant-sage-eta.vercel.app/) to see in preview domain deployed via Vercel
 
 ## Getting Started
 
