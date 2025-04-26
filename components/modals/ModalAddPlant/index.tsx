@@ -150,7 +150,9 @@ const ModalAddPlant = () => {
         },
       }}
     >
-      {<CallToAction icon="plus-lg" title={t("ModalAddPlan-CTA-Add-Title")} subtitle={t("ModalAddPlan-CTA-Add-Subtitle")} />}
+      {_processType !== ProcessType.UPDATE && (
+        <CallToAction icon="plus-lg" title={t("ModalAddPlan-CTA-Add-Title")} subtitle={t("ModalAddPlan-CTA-Add-Subtitle")} />
+      )}
       <Input
         id="name"
         label={t("ModalAddPlan-FormItem-Name-Label")}
